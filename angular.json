@@ -55,7 +55,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "sourceMap": false,
+              "vendorChunk": true
             },
             "development": {
               "buildOptimizer": false,

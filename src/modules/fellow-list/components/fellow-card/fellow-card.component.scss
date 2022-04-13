@@ -1,0 +1,36 @@
+.card {
+  margin-bottom: 1rem;
+  box-shadow: 0 0 15px 0px #d3d3d3;
+
+  .card-img-top {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
+  .card-body {
+    display: flex;
+    .card-left {
+      margin-right: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-right {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      flex-grow: 0;
+    }
+
+    .card-link {
+      color: var(--bs-body-color);
+    }
+
+    .card-link + .card-link {
+      margin-left: 0.5rem;
+    }
+  }
+}

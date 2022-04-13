@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="header">The fellowship of the tretton37</div>
+  </div>
+
+  <div class="row">
+    <fellow-filter
+      (searchByName)="searchByName($event)"
+      (searchByOffice)="searchByOffice($event)"
+      (sortChanged)="sortChanged($event)"
+      (viewChanged)="viewChanged($event)"
+      [officeList]="officeList"
+    ></fellow-filter>
+  </div>
+
+  <ng-container *ngIf="filteredFellowList$ | async as fellowList; else loading">
+    <div class="row">
+      <fellow-card
+        class="col-xs-6 col-md-4 col-lg-3"
+        [ngClass]="{ 'col-xs-12 col-md-12 col-lg-12': viewMode === 2 }"
+        *ngFor="
+          let fellow of fellowList
+            | sort: selectedSort
+            | paginate: { itemsPerPage: 8, currentPage: p }
+        "
+        [fellow]="fellow"
+        [viewMode]="viewMode"
+      >
+      </fellow-card>
+    </div>
+    <div class="row">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #loading><div class="loader">Loading...</div></ng-template>

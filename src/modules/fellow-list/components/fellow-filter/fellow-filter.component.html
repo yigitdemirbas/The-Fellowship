@@ -1,0 +1,64 @@
+<div class="filter-wrapper">
+  <div class="row">
+    <div class="col-12 col-md-3">
+      <input
+        type="text"
+        class="form-control mb-2 mb-md-0"
+        placeholder="Name"
+        [(ngModel)]="name"
+        (ngModelChange)="searchName()"
+      />
+    </div>
+    <div class="col-12 col-md-3">
+      <select
+        name="office"
+        class="form-control mb-2 mb-md-0"
+        id="office"
+        [(ngModel)]="office"
+        (ngModelChange)="searchOffice()"
+      >
+        <option value="" selected>Select Office</option>
+        <option *ngFor="let office of officeList" [value]="office">
+          {{ office }}
+        </option>
+      </select>
+    </div>
+    <div class="col-12 col-md-3">
+      <select
+        name="sort"
+        class="form-control mb-2 mb-md-0"
+        id="sort"
+        [(ngModel)]="sort"
+        (ngModelChange)="sortSelected()"
+      >
+        <option *ngFor="let opt of sortingOptions" [value]="opt.key">
+          {{ opt.value }}
+        </option>
+      </select>
+    </div>
+    <div class="col-12 col-md-3 d-flex justify-content-end">
+      <input
+        type="radio"
+        class="btn-check"
+        name="options"
+        id="option1"
+        autocomplete="off"
+        (change)="viewChange(1)"
+        checked
+      />
+      <label class="btn btn-primary" style="margin-right: 1rem" for="option1">
+        Grid
+      </label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="options"
+        id="option2"
+        autocomplete="off"
+        (change)="viewChange(2)"
+      />
+      <label class="btn btn-primary" for="option2">List</label>
+    </div>
+  </div>
+</div>
