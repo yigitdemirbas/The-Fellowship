@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FellowListComponent } from './components/fellow-list/fellow-list.component';
 import { CoreModule, SortPipe } from '../core';
-import { FellowListRoutingModule } from './fellow-list-routing.module';
+import { FellowRoutingModule } from './fellow-routing.module';
 import { FellowCardComponent } from './components/fellow-card/fellow-card.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FellowFilterComponent } from './components/fellow-filter/fellow-filter.component';
@@ -19,10 +19,10 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CoreModule.forRoot(),
-    FellowListRoutingModule,
+    FellowRoutingModule,
     NgxPaginationModule,
     FontAwesomeModule,
     FormsModule,
   ],
 })
-export class FellowListModule {}
+export class FellowModule {}

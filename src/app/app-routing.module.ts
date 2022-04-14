@@ -10,8 +10,8 @@ const routes: Routes = [
   {
     path: 'fellow-list',
     loadChildren: () =>
-      import('../modules/fellow-list/fellow-list.module').then(
-        (m) => m.FellowListModule
+      import('../modules/fellow/fellow.module').then(
+        (m) => m.FellowModule
       ),
   },
 ];
